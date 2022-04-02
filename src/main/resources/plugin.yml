@@ -7,10 +7,8 @@ description: 마인크래프트 스텟 플러그인
 commands:
   stats:
     description: stats 커멘드
-    commands:
-      info:
-        discription: 스텟 정보 출력
-      add:
-        discription: 더하기
+    aliases:
+      - st
+    usage: "Usage: /<command> [info/add]"
   alltime:
     description: 역대 접속자
