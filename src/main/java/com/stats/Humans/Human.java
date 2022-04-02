@@ -15,7 +15,7 @@ public class Human {
     private int luck = 10;  //행운
     private int handicraft = 10;  //손재주
     private int attractive = 10;  //매력
-    private int level = 1;  //레벨
+    private int level = 0;  //레벨
     private int morestat = 0;  //추가 스텟
     private int hexp = 0;  //현재 경험치
     private int hNeedForNextL = level * 10;  //다음 레벨까지 필요경험치량
@@ -166,39 +166,7 @@ public class Human {
         mapSave();
     }
 
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public void setAgility(int agility) {
-        this.agility = agility;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
-
-    public void setLuck(int luck) {
-        this.luck = luck;
-    }
-
-    public void setHandicraft(int handicraft) {
-        this.handicraft = handicraft;
-    }
-
-    public void setAttractive(int attractive) {
-        this.attractive = attractive;
-    }
-
-    public int getHexp() {
+/*    public int getHexp() {
         return hexp;
     }
 
@@ -219,7 +187,7 @@ public class Human {
     public void sethNeedForNextL(int hNeedForNextL) {
         this.hNeedForNextL = hNeedForNextL;
         mapSave();
-    }
+    }*/
 
     public String getName( ) {
         return this.name;
@@ -234,11 +202,6 @@ public class Human {
     }
 
     public Human hLevelUp() {
-        /*Levels humLev= new Levels(this.level,this.hexp);
-        humLev.levelUp();
-        this.level = humLev.getNowlevel();
-        this.hexp = humLev.getExp();
-        this.morestat += 1;*/
         this.setLevel(this.getLevel() + 1);
         this.setMorestats(this.getMorestats() + 5);
         mapSave();
