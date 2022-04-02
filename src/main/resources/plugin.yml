@@ -1,0 +1,13 @@
+name: Stats
+version: '${project.version}'
+main: com.stats.Stats
+api-version: 1.18
+authors: [ behappy ]
+description: 마인크래프트 스텟 플러그인
+commands:
+  statsadd:
+    description: 몰라
+  statsinfo:
+    description: 와 설명ㄷㄷ!
+  alltime:
+    description: 역대 접속자
