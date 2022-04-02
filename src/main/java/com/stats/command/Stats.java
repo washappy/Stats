@@ -14,6 +14,8 @@ public class Stats implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
 
+            String playername = player.getPlayer().getName();
+
             if (args.length == 1) {
 
                 if ("info".equals(args[0])) {
@@ -22,30 +24,39 @@ public class Stats implements CommandExecutor {
 
             }
             else if ("add".equals(args[0]) && Integer.valueOf(args[2]) instanceof Integer) {
+                int num = Integer.valueOf(args[2]);
                 switch (args[1]) {
                     case "strength":
-                        playerData.get(player.getPlayer().getName()).addStrength(Integer.valueOf(args[1]));
+                        player.sendMessage(args[1] + args[2]);
+                        playerData.get(playername).addStrength(num);
                         break;
                     case "agility" :
-                        playerData.get(player.getPlayer().getName()).addAgility(Integer.valueOf(args[1]));
+                        player.sendMessage(args[1] + args[2]);
+                        playerData.get(playername).addAgility(num);
                         break;
                     case "speed" :
-                        playerData.get(player.getPlayer().getName()).addSpeed(Integer.valueOf(args[1]));
+                        player.sendMessage(args[1] + args[2]);
+                        playerData.get(playername).addSpeed(num);
                         break;
                     case "health" :
-                        playerData.get(player.getPlayer().getName()).addHealth(Integer.valueOf(args[1]));
+                        player.sendMessage(args[1] + args[2]);
+                        playerData.get(playername).addHealth(num);
                         break;
                     case "defense":
-                        playerData.get(player.getPlayer().getName()).addDefense(Integer.valueOf(args[1]));
+                        player.sendMessage(args[1] + args[2]);
+                        playerData.get(playername).addDefense(num);
                         break;
                     case "luck" :
-                        playerData.get(player.getPlayer().getName()).addLuck(Integer.valueOf(args[1]));
+                        player.sendMessage(args[1] + args[2]);
+                        playerData.get(playername).addLuck(num);
                         break;
                     case "handicraft" :
-                        playerData.get(player.getPlayer().getName()).addHandicraft(Integer.valueOf(args[1]));
+                        player.sendMessage(args[1] + args[2]);
+                        playerData.get(playername).addHandicraft(num);
                         break;
                     case "attractive" :
-                        playerData.get(player.getPlayer().getName()).addAttractive(Integer.valueOf(args[1]));
+                        player.sendMessage(args[1] + args[2]);
+                        playerData.get(playername).addAttractive(num);
                         break;
                     default:
                         sender.sendMessage("오타난 커멘드");
@@ -60,5 +71,4 @@ public class Stats implements CommandExecutor {
         }
         return false;
     }
-
 }

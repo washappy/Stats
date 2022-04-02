@@ -23,7 +23,7 @@ public class Human {
 
     public Human(String hname) {  //생성자
         this.name = hname;
-    };
+    }
 
     public HashMap<String, Integer> getMap() {
         return this.allStats;
@@ -164,6 +164,38 @@ public class Human {
     public void setMorestats(int morestats) {
         this.morestat = morestats;
         mapSave();
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public void setAgility(int agility) {
+        this.agility = agility;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public void setLuck(int luck) {
+        this.luck = luck;
+    }
+
+    public void setHandicraft(int handicraft) {
+        this.handicraft = handicraft;
+    }
+
+    public void setAttractive(int attractive) {
+        this.attractive = attractive;
     }
 
     public int getHexp() {
