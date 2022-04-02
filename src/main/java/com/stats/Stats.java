@@ -1,7 +1,6 @@
 package com.stats;
 
 import com.stats.command.AllTimePlayer;
-import com.stats.command.Statsadd;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -29,7 +28,6 @@ public final class Stats extends JavaPlugin {
 
     private void getCommands() {
         Objects.requireNonNull(getCommand("stats")).setExecutor(new com.stats.command.Stats());
-        Objects.requireNonNull(getCommand("statsadd")).setExecutor(new Statsadd());
         Objects.requireNonNull(getCommand("alltime")).setExecutor(new AllTimePlayer());
     }
 
