@@ -5,6 +5,8 @@ api-version: 1.18
 authors: [ behappy ]
 description: 마인크래프트 스텟 플러그인
 commands:
+  stats:
+    description: stats 커멘드
   statsadd:
     description: 몰라
   statsinfo:
