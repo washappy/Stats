@@ -32,7 +32,7 @@ public final class Stats extends JavaPlugin {
     }
 
     private void getCommands() {
-        Objects.requireNonNull(getCommand("stats")).setExecutor(new Stats());
+        Objects.requireNonNull(getCommand("stats")).setExecutor(new com.stats.command.Stats());
         Objects.requireNonNull(getCommand("statsadd")).setExecutor(new Statsadd());
         Objects.requireNonNull(getCommand("statsinfo")).setExecutor(new StatsInfo());
         Objects.requireNonNull(getCommand("alltime")).setExecutor(new AllTimePlayer());
