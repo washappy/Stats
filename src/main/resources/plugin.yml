@@ -9,7 +9,5 @@ commands:
     description: stats 커멘드
   statsadd:
     description: 몰라
-  statsinfo:
-    description: 와 설명ㄷㄷ!
   alltime:
     description: 역대 접속자

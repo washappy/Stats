@@ -19,11 +19,10 @@ public class LevelListener implements Listener {
         playerName = e.getPlayer().getName();
 
         if (e.getNewLevel()>e.getOldLevel()) {
-            e.getPlayer().sendMessage(ChatColor.YELLOW + "Level Up!");
-            Human hum = playerData.get(playerName).hLevelUp();
-            e.getPlayer().sendMessage(Integer.toString(hum.getLevel()));
-            e.getPlayer().sendMessage(Integer.toString(playerData.get(playerName).getLevel()));
-
+            for (int i =0; i < e.getNewLevel()-e.getOldLevel(); i++) {
+                e.getPlayer().sendMessage(ChatColor.YELLOW + "Level Up!");
+                Human hum = playerData.get(playerName).hLevelUp();
+            }
         }
     }
 }

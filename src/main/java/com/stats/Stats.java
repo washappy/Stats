@@ -2,14 +2,10 @@ package com.stats;
 
 import com.stats.command.AllTimePlayer;
 import com.stats.command.Statsadd;
-import com.stats.command.StatsInfo;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import com.stats.JoinListener;
 
 import java.util.Objects;
-
-import static com.stats.ArrayManager.playerData;
 
 //import static com.stats.FileMaker.makeFile;
 
@@ -34,7 +30,6 @@ public final class Stats extends JavaPlugin {
     private void getCommands() {
         Objects.requireNonNull(getCommand("stats")).setExecutor(new com.stats.command.Stats());
         Objects.requireNonNull(getCommand("statsadd")).setExecutor(new Statsadd());
-        Objects.requireNonNull(getCommand("statsinfo")).setExecutor(new StatsInfo());
         Objects.requireNonNull(getCommand("alltime")).setExecutor(new AllTimePlayer());
     }
 
