@@ -5,7 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static com.stats.ArrayManager.humanss;
+import static com.stats.Manager.ArrayManager.humanss;
 
 public class AllTimePlayer implements CommandExecutor{
     @Override

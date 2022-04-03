@@ -1,4 +1,4 @@
-package com.stats;
+package com.stats.Manager;
 
 import org.bukkit.attribute.AttributeInstance;
 

@@ -1,11 +1,13 @@
 package com.stats.command;
 
+import com.stats.Manager.FileManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static com.stats.ArrayManager.playerData;
+import static com.stats.Manager.ArrayManager.playerData;
+import static com.stats.Manager.FileManager.jsonFile;
 
 public class Stats implements CommandExecutor {
 
@@ -21,7 +23,14 @@ public class Stats implements CommandExecutor {
                 if ("info".equals(args[0])) {
                     player.sendMessage((playerData.get(player.getPlayer().getName())).info());
                 }
-
+                else if("save".equals(args[0])) {
+                    FileManager.saveFile();
+                    FileManager.saveList();
+                    player.sendMessage("stats saved");
+                }
+                else if("jsoninfo".equals(args[0])) {
+                    player.sendMessage(playerData.get(playername).toString());
+                }
             }
             else if ("add".equals(args[0]) && Integer.valueOf(args[2]) instanceof Integer) {
                 int num = Integer.valueOf(args[2]);
@@ -62,6 +71,7 @@ public class Stats implements CommandExecutor {
                         sender.sendMessage("오타난 커멘드");
                         break;
                 }
+                jsonFile.put(playername,playerData.get(playername).getMap());
             }
 
             else {

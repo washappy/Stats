@@ -25,6 +25,11 @@ public class Human {
         this.name = hname;
     }
 
+    public Human(String hname, HashMap<String,Integer> hashMap) {
+        this.name = hname;
+        mapPut(hashMap);
+    }
+
     public HashMap<String, Integer> getMap() {
         return this.allStats;
     }
@@ -42,6 +47,21 @@ public class Human {
         allStats.put("moreStats",this.morestat);
         allStats.put("exp",this.hexp);
         allStats.put("needed",this.hNeedForNextL);
+    }
+
+    public void mapPut(HashMap<String,Integer> hashMap) {
+        this.strength = hashMap.get("strength");
+        this.agility = hashMap.get("agility");
+        this.speed = hashMap.get("speed");
+        this.health = hashMap.get("health");
+        this.defense = hashMap.get("defense");
+        this.luck = hashMap.get("luck");
+        this.handicraft = hashMap.get("handicraft");
+        this.attractive = hashMap.get("attractive");
+        this.level = hashMap.get("level");
+        this.morestat = hashMap.get("moreStats");
+        this.hexp = hashMap.get("exp");
+        this.hNeedForNextL = hashMap.get("needed");
     }
 
     public String getJob() {
