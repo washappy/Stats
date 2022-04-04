@@ -28,8 +28,13 @@ public class Stats implements CommandExecutor {
                     FileManager.saveList();
                     player.sendMessage("stats saved");
                 }
-                else if("jsoninfo".equals(args[0])) {
-                    player.sendMessage(playerData.get(playername).toString());
+                else if("help".equals(args[0])) {
+                    player.sendMessage("================");
+                    player.sendMessage("/stats info : 스텟 정보 보기");
+                    player.sendMessage("/stats add <스텟이름> <값> : 스텟 더하기");
+                    player.sendMessage("/stats save : 스텟 수동 저장");
+                    player.sendMessage("/stats help : 스텟 정보 보기");
+                    player.sendMessage("================");
                 }
             }
             else if ("add".equals(args[0]) && Integer.valueOf(args[2]) instanceof Integer) {
