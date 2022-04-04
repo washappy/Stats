@@ -1,5 +1,6 @@
 package com.stats.Listeners;
 
+import com.stats.Manager.AttributeManager;
 import com.stats.Manager.FileManager;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
@@ -26,9 +27,13 @@ public class JoinListener implements Listener {
         e.setJoinMessage((ChatColor.WHITE + "앗! 야생의 ") + (ChatColor.YELLOW + playerName) + (ChatColor.WHITE + "(이)가 들어왔다!"));
         boolean contains = humanss.contains(playerName);
         if (contains) {
-            //Human hum1 = new Human(playerName, jsonFile.get(playerName));
-            //playerData.put(playerName,hum1);
-            //AttributeManager 로 스텟 적용
+            if (playerData.get(playerName)==null) {
+                Human hum = new Human(playerName);
+                playerData.put(playerName,hum);
+
+                jsonFile.put(playerName,hum.getMap());
+            }
+            AttributeManager.setAttributes(e.getPlayer(),playerData.get(playerName));
         } else {
             Human hum = new Human(playerName);
             humanss.add(playerName);
@@ -36,7 +41,7 @@ public class JoinListener implements Listener {
 
             jsonList.add(playerName);
             jsonFile.put(playerName,hum.getMap());
-            //AttributeManager
+            AttributeManager.setAttributes(e.getPlayer(),playerData.get(playerName));
         }
     }
 

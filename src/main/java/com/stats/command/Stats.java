@@ -1,5 +1,6 @@
 package com.stats.command;
 
+import com.stats.Manager.AttributeManager;
 import com.stats.Manager.FileManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -79,6 +80,7 @@ public class Stats implements CommandExecutor {
                         break;
                 }
                 jsonFile.put(playername,playerData.get(playername).getMap());
+                AttributeManager.setAttributes(player,playerData.get(playername));
             }
 
             else {
