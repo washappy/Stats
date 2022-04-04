@@ -36,35 +36,35 @@ public class Stats implements CommandExecutor {
                 int num = Integer.valueOf(args[2]);
                 switch (args[1]) {
                     case "strength":
-                        player.sendMessage(args[1] + args[2]);
+                        player.sendMessage(args[1] + " is added " + args[2]);
                         playerData.get(playername).addStrength(num);
                         break;
                     case "agility" :
-                        player.sendMessage(args[1] + args[2]);
+                        player.sendMessage(args[1] +" is added " + args[2]);
                         playerData.get(playername).addAgility(num);
                         break;
                     case "speed" :
-                        player.sendMessage(args[1] + args[2]);
+                        player.sendMessage(args[1] +" is added " + args[2]);
                         playerData.get(playername).addSpeed(num);
                         break;
                     case "health" :
-                        player.sendMessage(args[1] + args[2]);
+                        player.sendMessage(args[1] +" is added " + args[2]);
                         playerData.get(playername).addHealth(num);
                         break;
                     case "defense":
-                        player.sendMessage(args[1] + args[2]);
+                        player.sendMessage(args[1] +" is added " + args[2]);
                         playerData.get(playername).addDefense(num);
                         break;
                     case "luck" :
-                        player.sendMessage(args[1] + args[2]);
+                        player.sendMessage(args[1] +" is added " + args[2]);
                         playerData.get(playername).addLuck(num);
                         break;
                     case "handicraft" :
-                        player.sendMessage(args[1] + args[2]);
+                        player.sendMessage(args[1] +" is added " + args[2]);
                         playerData.get(playername).addHandicraft(num);
                         break;
                     case "attractive" :
-                        player.sendMessage(args[1] + args[2]);
+                        player.sendMessage(args[1] +" is added " + args[2]);
                         playerData.get(playername).addAttractive(num);
                         break;
                     default:

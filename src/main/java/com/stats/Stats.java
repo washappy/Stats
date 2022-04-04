@@ -27,6 +27,8 @@ public final class Stats extends JavaPlugin {
         Bukkit.getLogger().info("stats plugin deactivated");
         FileManager.makeFile();
         FileManager.makeList();
+        FileManager.saveFile();
+        FileManager.saveList();
     }
 
     private void getCommands() {
