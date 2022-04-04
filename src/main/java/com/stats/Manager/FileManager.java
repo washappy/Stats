@@ -55,7 +55,7 @@ public class FileManager {
         }
     }
 
-    public static HashMap<String,Integer> getFile(String pl) {
+    public static /*HashMap<String,Integer>*/JSONObject getFile(/*String pl*/) {
         JSONParser parser = new JSONParser();
         try {
             FileReader reader = new FileReader(path +"/plugins/minecraft_stats/playerDs.json");
@@ -63,9 +63,11 @@ public class FileManager {
             JSONObject jsonObject = (JSONObject) obj;
 
             reader.close();
-            Human hum = (Human) jsonObject.get(pl);
 
-            return hum.getMap();
+            //HashMap<String,Integer> returnMap;
+            //returnMap = (HashMap<String, Integer>) jsonObject.get(pl);
+
+            return /*returnMap*/jsonObject;
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
