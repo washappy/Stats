@@ -24,12 +24,14 @@ public class Stats implements CommandExecutor {
                     player.sendMessage((playerData.get(player.getPlayer().getName())).info());
                 }
                 else if("save".equals(args[0])) {
+                    FileManager.makeFile();
+                    FileManager.makeList();
                     FileManager.saveFile();
                     FileManager.saveList();
                     player.sendMessage("stats saved");
                 }
                 else if("help".equals(args[0])) {
-                    player.sendMessage("================");
+                    player.sendMessage("\n================");
                     player.sendMessage("/stats info : 스텟 정보 보기");
                     player.sendMessage("/stats add <스텟이름> <값> : 스텟 더하기");
                     player.sendMessage("/stats save : 스텟 수동 저장");

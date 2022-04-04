@@ -1,5 +1,6 @@
 package com.stats.command;
 
+import com.stats.Manager.FileManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -11,10 +12,15 @@ public class AllTimePlayer implements CommandExecutor{
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String args[]){
         if (sender instanceof Player) {
+            Player player = (Player) sender;
             if (args.length == 0) {
-                Player player = (Player) sender;
                 player.sendMessage(String.valueOf(humanss));
-            } else {
+            } else if (args.length == 1 && "clear".equals(args[0])) {
+                humanss.clear();
+                FileManager.jsonList.clear();
+                player.sendMessage("all cleared");
+            }
+            else {
                 sender.sendMessage("완전하지 않은 커멘드");
             }
             return true;
