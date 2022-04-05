@@ -1,5 +1,6 @@
 package com.stats.command;
 
+import com.stats.GUI.StatsGui;
 import com.stats.Manager.AttributeManager;
 import com.stats.Manager.FileManager;
 import org.bukkit.command.Command;
@@ -38,6 +39,9 @@ public class Stats implements CommandExecutor {
                     player.sendMessage("/stats save : 스텟 수동 저장");
                     player.sendMessage("/stats help : 스텟 정보 보기");
                     player.sendMessage("================");
+                }
+                else if("open".equals(args[0])) {
+                    new StatsGui(player);
                 }
             }
             else if ("add".equals(args[0]) && Integer.valueOf(args[2]) instanceof Integer) {

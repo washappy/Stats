@@ -1,5 +1,6 @@
 package com.stats;
 
+import com.stats.Listeners.GuiListener;
 import com.stats.Listeners.JoinListener;
 import com.stats.Listeners.LevelListener;
 import com.stats.Manager.ArrayManager;
@@ -39,6 +40,7 @@ public final class Stats extends JavaPlugin {
     private void registerEvents(){
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
         getServer().getPluginManager().registerEvents(new LevelListener(), this);
+        getServer().getPluginManager().registerEvents(new GuiListener(), this);
     }
 
 }
