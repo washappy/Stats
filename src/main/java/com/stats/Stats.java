@@ -6,6 +6,7 @@ import com.stats.Listeners.LevelListener;
 import com.stats.Manager.ArrayManager;
 import com.stats.Manager.FileManager;
 import com.stats.command.AllTimePlayer;
+import com.stats.command.AutoTab;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -34,6 +35,7 @@ public final class Stats extends JavaPlugin {
 
     private void getCommands() {
         Objects.requireNonNull(getCommand("stats")).setExecutor(new com.stats.command.Stats());
+        Objects.requireNonNull(getCommand("stats")).setTabCompleter(new AutoTab());
         Objects.requireNonNull(getCommand("alltime")).setExecutor(new AllTimePlayer());
     }
 
