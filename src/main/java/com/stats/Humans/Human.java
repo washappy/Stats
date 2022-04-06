@@ -161,7 +161,7 @@ public class Human {
     }
 
     public void addAttractive(int attractive) {
-        if(this.attractive>=attractive) {
+        if(this.morestat>=attractive) {
             this.attractive += attractive;
             this.setMorestats(this.morestat-attractive);
             mapSave();
