@@ -20,7 +20,19 @@ public class Stats implements CommandExecutor {
 
             String playername = player.getPlayer().getName();
 
-            if ("add".equals(args[0]) && Integer.valueOf(args[2]) instanceof Integer) {
+            if ("info".equals(args[0])) {
+                player.sendMessage((playerData.get(player.getPlayer().getName())).info());
+            }
+            else if("save".equals(args[0])) {
+                saveFile(player);
+            }
+            else if("help".equals(args[0])) {
+                statsHelp(player);
+            }
+            else if("open".equals(args[0])) {
+                new StatsGui(player);
+            }
+            else if ("add".equals(args[0]) && Integer.valueOf(args[2]) instanceof Integer) {
                 int num = Integer.valueOf(args[2]);
                 switch (args[1]) {
                     case "strength":
@@ -68,4 +80,21 @@ public class Stats implements CommandExecutor {
         return false;
     }
 
+    private void statsHelp(Player player) {
+        player.sendMessage("\n================");
+        player.sendMessage("/stats info : 스텟 정보 보기");
+        player.sendMessage("/stats add <스텟이름> <값> : 스텟 더하기");
+        player.sendMessage("/stats save : 스텟 수동 저장");
+        player.sendMessage("/stats help : 스텟 정보 보기");
+        player.sendMessage("/stats open : 스텟 창 열기");
+        player.sendMessage("================");
+    }
+
+    private void saveFile(Player player) {
+        FileManager.makeFile();
+        FileManager.makeList();
+        FileManager.saveFile();
+        FileManager.saveList();
+        player.sendMessage("stats saved");
+    }
 }

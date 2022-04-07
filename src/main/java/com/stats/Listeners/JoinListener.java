@@ -27,7 +27,7 @@ public class JoinListener implements Listener {
         e.setJoinMessage((ChatColor.WHITE + "앗! 야생의 ") + (ChatColor.YELLOW + playerName) + (ChatColor.WHITE + "(이)가 들어왔다!"));
         boolean contains = humanss.contains(playerName);
         if (contains) {
-            if (playerData.get(playerName)==null) {
+            if (jsonFile.get(playerName)==null) {
                 Human hum = new Human(playerName);
                 playerData.put(playerName,hum);
 

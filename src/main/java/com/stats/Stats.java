@@ -3,6 +3,7 @@ package com.stats;
 import com.stats.Listeners.GuiListener;
 import com.stats.Listeners.JoinListener;
 import com.stats.Listeners.LevelListener;
+import com.stats.Listeners.RightClickListenter;
 import com.stats.Manager.ArrayManager;
 import com.stats.Manager.FileManager;
 import com.stats.command.AllTimePlayer;
@@ -43,6 +44,7 @@ public final class Stats extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
         getServer().getPluginManager().registerEvents(new LevelListener(), this);
         getServer().getPluginManager().registerEvents(new GuiListener(), this);
+        getServer().getPluginManager().registerEvents(new RightClickListenter(), this);
     }
 
 }

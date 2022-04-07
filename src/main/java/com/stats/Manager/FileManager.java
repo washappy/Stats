@@ -116,11 +116,8 @@ public class FileManager {
             FileReader reader = new FileReader(path +"/plugins/minecraft_stats/playerList.json");
             Object obj = parser.parse(reader);
             JSONArray jsonArray = (JSONArray) obj;
-
             reader.close();
-
             return jsonArray;
-
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

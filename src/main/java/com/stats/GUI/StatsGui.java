@@ -15,6 +15,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 import static com.stats.Manager.ArrayManager.playerData;
+import static com.stats.Manager.AttributeManager.setAttributes;
 
 
 public class StatsGui extends GuiBase{
@@ -50,7 +51,7 @@ public class StatsGui extends GuiBase{
         setItem("신속 speed", Collections.singletonList(""+human.getSpeed()), Material.LIGHT_BLUE_STAINED_GLASS_PANE, 1, 14, "stats.speed", true);
         setItem("민첩 agility",Collections.singletonList(""+human.getAgility()),  Material.BLUE_STAINED_GLASS_PANE, 1, 20, "stats.agility", true);
         setItem("체력 health",Collections.singletonList(""+human.getHealth()),  Material.PINK_STAINED_GLASS_PANE, 1, 24, "stats.health", true);
-        setItem("방어 defense",Collections.singletonList(""+human.getDefense()),  Material.GREEN_STAINED_GLASS_PANE, 1, 38, "stats.defense", true);
+        setItem("방어 defense",Collections.singletonList(""+human.getDefense()),  Material.LIME_STAINED_GLASS_PANE, 1, 38, "stats.defense", true);
         setItem("행운 luck",Collections.singletonList(""+human.getLuck()),  Material.YELLOW_STAINED_GLASS_PANE, 1, 42, "stats.luck", true);
         setItem("손재주 handicraft",Collections.singletonList(""+human.getHandicraft()),  Material.MAGENTA_STAINED_GLASS_PANE, 1, 48, "stats.handicraft", true);
         setItem("매력 attractive",Collections.singletonList(""+human.getAttractive()),  Material.PURPLE_STAINED_GLASS_PANE, 1, 50, "stats.attractive", true);
@@ -78,46 +79,55 @@ public class StatsGui extends GuiBase{
             case "stats.strength":
                 human.addStrength(1);
                 p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.5F, 1);
+                setAttributes(p,human);
                 new StatsGui(p);
                 break;
             case "stats.health":
                 human.addHealth(1);
                 p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.5F, 1);
+                setAttributes(p,human);
                 new StatsGui(p);
                 break;
             case "stats.agility":
                 human.addAgility(1);
                 p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.5F, 1);
+                setAttributes(p,human);
                 new StatsGui(p);
                 break;
             case "stats.speed":
                 human.addSpeed(1);
                 p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.5F, 1);
+                setAttributes(p,human);
                 new StatsGui(p);
                 break;
             case "stats.luck":
                 human.addLuck(1);
                 p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.5F, 1);
+                setAttributes(p,human);
                 new StatsGui(p);
                 break;
             case "stats.defense":
                 human.addDefense(1);
                 p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.5F, 1);
+                setAttributes(p,human);
                 new StatsGui(p);
                 break;
             case "stats.handicraft":
                 human.addHandicraft(1);
                 p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.5F, 1);
+                setAttributes(p,human);
                 new StatsGui(p);
                 break;
             case "stats.attractive":
                 human.addAttractive(1);
                 p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.5F, 1);
+                setAttributes(p,human);
                 new StatsGui(p);
                 break;
             case "stats.reload":
                 new StatsGui(p);
                 p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 0.5F, 1);
+                setAttributes(p,human);
                 break;
             case "stats.close":
                 this.forceCloseGUI(p);

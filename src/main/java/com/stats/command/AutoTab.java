@@ -24,43 +24,29 @@ public class AutoTab implements TabCompleter {
 
         if (args.length == 1) {
 
-            if ("info".equals(args[0])) {
-                player.sendMessage((playerData.get(player.getPlayer().getName())).info());
-            }
-            else if("save".equals(args[0])) {
-                saveFile(player);
-            }
-            else if("help".equals(args[0])) {
-                statsHelp(player);
-            }
-            else if("open".equals(args[0])) {
-                new StatsGui(player);
-            }
-            ArrayList<String> arrayList = new ArrayList<>(4);
+            List<String> arrayList = new ArrayList<>(5);
+
             arrayList.add("info");
             arrayList.add("save");
             arrayList.add("help");
             arrayList.add("open");
+            arrayList.add("add");
+
+            return arrayList;
+        } else if (args.length == 2 && "add".equals(args[0])) {
+            List<String> arrayList = new ArrayList<>();
+            arrayList.add("agility");
+            arrayList.add("attractive");
+            arrayList.add("defense");
+            arrayList.add("handicraft");
+            arrayList.add("health");
+            arrayList.add("luck");
+            arrayList.add("speed");
+            arrayList.add("strength");
+
             return arrayList;
         }
 
         return null;
-    }
-
-    private void statsHelp(Player player) {
-        player.sendMessage("\n================");
-        player.sendMessage("/stats info : 스텟 정보 보기");
-        player.sendMessage("/stats add <스텟이름> <값> : 스텟 더하기");
-        player.sendMessage("/stats save : 스텟 수동 저장");
-        player.sendMessage("/stats help : 스텟 정보 보기");
-        player.sendMessage("================");
-    }
-
-    private void saveFile(Player player) {
-        FileManager.makeFile();
-        FileManager.makeList();
-        FileManager.saveFile();
-        FileManager.saveList();
-        player.sendMessage("stats saved");
     }
 }
