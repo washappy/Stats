@@ -1,14 +1,16 @@
 package com.stats.Manager;
 
 import com.stats.Humans.Human;
+import org.bukkit.Location;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ArrayManager {
 
-    public static ArrayList<String> humanss = new ArrayList<String>();
-    public static HashMap<String, Human> playerData= new HashMap<String, com.stats.Humans.Human>();
+    public static ArrayList<String> humanss = new ArrayList<>();
+    public static HashMap<String, Human> playerData= new HashMap<>();
+    public static HashMap<String, Location> playerLocate = new HashMap<>();
 
     public static void putJson() throws NullPointerException {
         for (int i = 0; i<FileManager.getList().toArray().length; i++) {

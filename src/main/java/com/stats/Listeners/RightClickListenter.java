@@ -1,5 +1,6 @@
 package com.stats.Listeners;
 
+import com.stats.GUI.MainGUI;
 import com.stats.GUI.StatsGui;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -14,9 +15,9 @@ public class RightClickListenter implements Listener {
         Player p = e.getPlayer();
         Action a = e.getAction();
 
-        if (a==Action.RIGHT_CLICK_AIR) {
+        if (a==Action.RIGHT_CLICK_AIR||a==Action.RIGHT_CLICK_BLOCK) {
             if (p.getItemInHand().getType()== Material.BOOK) {
-                new StatsGui(p);
+                new MainGUI(p);
             }
         }
     }

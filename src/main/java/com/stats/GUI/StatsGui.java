@@ -31,7 +31,6 @@ public class StatsGui extends GuiBase{
     protected void init(Player p) {
 
         onPage.putIfAbsent(p, 0);
-        int page = onPage.get(p);
 
         Human human = playerData.get(p.getPlayer().getName());
         for(int i=0;i<54;i++){
@@ -60,7 +59,7 @@ public class StatsGui extends GuiBase{
                 "speed : " + human.getSpeed(), "luck : " + human.getLuck(), "attractiveness : " + human.getAttractive(), "handicraft : " + human.getHandicraft(),
                 " ", "more : " + human.getMorestats(), "================"),  Material.PLAYER_HEAD, 1, 31, "stats.info", false);
 
-        setItem("현재 페이지/새로고침",Arrays.asList("현재 페이지를 나타냅니다.", "눌러서 새로고침"),  Material.BEACON, page+1, 45, "stats.reload", false);
+        setItem("현재 페이지/새로고침",Arrays.asList("현재 페이지를 나타냅니다.", "눌러서 새로고침"),  Material.BEACON, 1, 45, "stats.reload", false);
         setItem("현재 페이지/닫기",Collections.singletonList("페이지 닫기"),  Material.BARRIER, 1, 53, "stats.close", false);
     }
 
