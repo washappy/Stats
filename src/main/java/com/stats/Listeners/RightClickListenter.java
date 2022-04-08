@@ -16,7 +16,7 @@ public class RightClickListenter implements Listener {
         Action a = e.getAction();
 
         if (a==Action.RIGHT_CLICK_AIR||a==Action.RIGHT_CLICK_BLOCK) {
-            if (p.getItemInHand().getType()== Material.BOOK) {
+            if (p.getItemInHand().getType()== Material.NETHER_STAR) {
                 new MainGUI(p);
             }
         }
